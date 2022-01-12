@@ -2,26 +2,32 @@
   "name": "nodetype",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
-    "build": "tsc src/app.ts",
-    "dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node\" src/app.ts"
+    "build": "webpack",
+    "dev": "webpack serve --open"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Youn-Young-Seon/nodeType.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Youn-Young-Seon/nodeType/issues"
   },
   "homepage": "https://github.com/Youn-Young-Seon/nodeType#readme",
-  "dependencies": {
-    "dom": "^0.0.3",
-    "nodemon": "^2.0.15",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
   }
 }
