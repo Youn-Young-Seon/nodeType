@@ -4,11 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: './src/test.ts'
+        main: './src/app.ts'
     },
     output: {
         path: path.resolve('./dist'),
-        filename: '[name].js',
+        filename: '[name].js',        
     },
     module: {
         rules: [
@@ -44,5 +44,8 @@ module.exports = {
     },
     devServer: {
         static: './dist',
+        proxy: {
+            '/api': 'http://localhost:5000'
+        }
     },
 }
