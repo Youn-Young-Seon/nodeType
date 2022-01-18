@@ -1,0 +1,47 @@
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.navBar{
+    width: 20%;
+    height: 100%;
+    background-color: seashell;
+    overflow-y: scroll;
+}
+
+.navBar__container{
+    padding: 16px;
+}
+
+.navBar__container p,
+.navBar__container div{
+    margin: 12px 0px 8px 0;
+}
+
+.navBar__List{
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.navBar__List:hover{
+    background-color: wheat;
+    cursor: pointer;
+}
+
+.navBar__List div{
+    padding-left: 12px;
+}
+
+.navBar__container hr{
+    border-width: 0px 0px thin;
+    border-style: solid;
+    border-color: #eee;
+}

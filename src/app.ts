@@ -1,17 +1,33 @@
-import { pack, paramBox } from "./param";
-import styles from'./app.module.css';
+import { TopBar, NavBar, Main } from './views/index';
+import './app.module.css';
 
 
-const app = document.querySelector('#app');
-const button = `<Button class="bg-indigo-500">api</Button>`;
-const box = `<div class="${styles.box}">appBox</div>`;
-app.innerHTML = button;
+export class App{
+    private container: string;
+    private components: any[];
 
-const app1 = box;
-const app2 = paramBox;
+    constructor(container: string){
+        // this.container = document.querySelector(container) as HTMLElement;
+        this.container = container;
+        this.components = [];
 
-app.innerHTML = app1;
-app.innerHTML = app2;
+        this.initialize();
+    }
 
-pack();
+    initialize = () => {
+        const topBar = new TopBar(this.container);
+        const navBar = new NavBar(this.container);
+        const main = new Main(this.container);
 
+        this.components.push(topBar.template);    
+        this.components.push(navBar.template);        
+        this.components.push(main.template);
+
+        const page = document.querySelector(this.container) as HTMLElement;
+        page.innerHTML = this.components.join('');
+    }
+
+    render = () => {
+        
+    };
+}

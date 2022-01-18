@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: './src/app.ts'
+        main: './src/index.ts'
     },
     output: {
         path: path.resolve('./dist'),
@@ -20,7 +20,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             modules: {
-                                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                                localIdentName: "[local]--[hash:base64:5]",
                             }
                         }                    
                     }
