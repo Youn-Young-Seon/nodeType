@@ -1,5 +1,4 @@
 import { TopBar, NavBar, Main } from './views/index';
-import { STOCK_URL } from './core/api';
 import './app.module.css';
 
 
@@ -18,8 +17,7 @@ export class App{
     initialize = () => {
         const topBar = new TopBar(this.container);
         const navBar = new NavBar(this.container);
-        const main = new Main(this.container, STOCK_URL);
-        main.getRequestXHR();
+        const main = new Main(this.container);        
 
         this.components.push(topBar.template);    
         this.components.push(navBar.template);        
