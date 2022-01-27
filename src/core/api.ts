@@ -1,3 +1,5 @@
+import { MainApiType } from "../types";
+
 export class Api {
     private xhr: XMLHttpRequest;
     private url: string;
@@ -7,23 +9,10 @@ export class Api {
         this.xhr = new XMLHttpRequest();
     }
 
-    getRequestXHR = () => {
+    getRequestXHR = <T>(cb: (data: T) => void) => {
         this.xhr.open('GET', this.url);
         this.xhr.addEventListener('load', () => {
-            const data = JSON.parse(this.xhr.response);
-            let dataString :string;
-            const newData: any[] = []
-            data.items.item.forEach((a:any, i:number) => {
-                newData.push({...a});
-            });
-            console.log(newData);
-            for(let i=0; i<newData.length; i++){
-                dataString += newData[i].basDt;
-            }
-            const div = document.createElement('div');
-            
-            const div2 = document.querySelector('.main').appendChild(div);
-            div2.innerHTML = dataString;
+            cb(JSON.parse(this.xhr.response));
         })
         this.xhr.send();
     }
@@ -49,8 +38,8 @@ export class MainApi extends Api{
         super(url);
     }
 
-    getStock = () => {
-        return this.getRequestXHR();
+    getStock = (cb: (data: MainApiType) => void) => {
+        return this.getRequestXHR(cb);
     }
 
 }
