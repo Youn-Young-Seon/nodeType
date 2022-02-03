@@ -6,7 +6,7 @@
     border-bottom: 1px solid white;
 }
 
-.topBar__container{
+.container{
     height: 100%;
     padding: 24px;
     display: flex;
@@ -14,8 +14,8 @@
     justify-content: space-between;
 }
 
-.topBar__container h2,
-.topBar__container div{
+.container h2,
+.container div{
     margin-top: auto;
     margin-bottom: auto;
     cursor: pointer;

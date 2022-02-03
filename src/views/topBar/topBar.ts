@@ -1,14 +1,14 @@
+import { View } from "../../core/view";
 import { template } from "./topBar-template";
 
-export default class TopBar {
-    private _template = template;
-    private container: string;
+export default class TopBar extends View {
 
     constructor(container: string){
-        this.container = container;
+        super(container);        
+        this.container.querySelector('.topBar').innerHTML = template;
     }
 
-    get template(){
-        return this._template;
+    render = (): void => {
+        
     }
 }
