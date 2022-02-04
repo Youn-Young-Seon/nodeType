@@ -19,18 +19,22 @@ sequelize.sync({ force: false})
 });
 
 
+
 const port = process.env.PORT || 5000;
 app.listen(port, function(){
     console.log('express');
 })
 
-
 const cors = require('cors');
 app.use(cors());
 
 
-const api = require('./routes/api')
+const menu = require('./routes/menu');
+app.use('/menu', menu);
+
+const api = require('./routes/api');
 app.use('/api', api);
+
 
 
 app.get('/', function(req, res){

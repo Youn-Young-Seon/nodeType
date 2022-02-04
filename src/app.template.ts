@@ -4,7 +4,7 @@ export let template = `
     <div class="topBar">
         
     </div>
-    <div class="content">
+    <div class="${styles.content}">
         <div class="navBar">
             
         </div>

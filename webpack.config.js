@@ -55,7 +55,8 @@ module.exports = {
     devServer: {
         static: './dist',
         proxy: {
-            '/api': 'http://localhost:5000'
+            '/api': 'http://localhost:5000',
+            '/menu': 'http://localhost:5000'
         }
     },
 }

@@ -9,7 +9,7 @@ export class Api {
         this.xhr = new XMLHttpRequest();
     }
 
-    getRequestXHR = <T>(cb: (data: T) => void) => {
+    protected getRequestXHR = <T>(cb: (data: T) => void) => {
         this.xhr.open('GET', this.url);
         this.xhr.addEventListener('load', () => {
             cb(JSON.parse(this.xhr.response));
@@ -17,7 +17,7 @@ export class Api {
         this.xhr.send();
     }
     
-    getRequestPromise = () => {
+    protected getRequestPromise = () => {
         fetch(this.url)
         .then((response) => {
             return response.json();
@@ -41,5 +41,4 @@ export class MainApi extends Api{
     getStock = (cb: (data: MainApiType) => void) => {
         return this.getRequestXHR(cb);
     }
-
 }

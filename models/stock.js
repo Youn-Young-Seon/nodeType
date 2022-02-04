@@ -3,25 +3,25 @@ const Sequelize = require('sequelize');
 module.exports = class User extends Sequelize.Model{
     static init(sequelize){
         return super.init({
-            name: {
-                type: Sequelize.STRING(20),
-                allowNull: false,
-                unique: true
+            price: {
+                type: Sequelize.INTEGER,
+                allowNull: true,
             }
         }, {
             sequelize,
             timestamps: false,
             underscored: false,
-            modelName: 'User',
-            tableName: 'users',
+            modelName: 'Stock',
+            tableName: 'stocks',
             paranoid: false,
             charset: 'utf8mb4',
             collate: 'utf8mb4_general_ci'
         })
     }
-    static associate(db) {
-        // db.User.hasMany(db.Stock, {
-        //     foreignKey: 'userId', soruceKey: 'id'
-        // })
+    
+    static associate(db){
+        db.Stock.belongsTo(db.User, {
+            foreignKey: 'userId', targetKey: 'id'
+        });
     }
 }

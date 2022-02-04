@@ -1,3 +1,5 @@
+import { View } from "../core/view";
+
 export interface MainApiType{
     items: MainApiItemType,
     numOfRows: number,
@@ -19,4 +21,10 @@ export interface MainApiItemDetialType{
     stckIssuCmpyNm: string,
     stckParPrc: string,
     stckStacMd: string,
+}
+
+export interface RouteInfo{
+    path: string,
+    page: View,
+    params: RegExp | null;
 }
