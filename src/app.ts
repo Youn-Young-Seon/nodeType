@@ -2,6 +2,8 @@ import { TopBar, NavBar, Main } from './views/index';
 import './app.module.css';
 import { template } from './app.template';
 import { Router } from './core/routes';
+import { Login } from './views/login/login';
+import { DashBoard } from './views/dashboard/dashBoard';
 
 
 export class App{
@@ -17,10 +19,15 @@ export class App{
         const topBar = new TopBar(this.container);
         const navBar = new NavBar(this.container);
         const main = new Main(this.container);
+        const dashBoard = new DashBoard(this.container);
+        const login = new Login(this.container);
 
         const router = new Router();
-        router.addRouteInfo('/menu', navBar, /menu\/(\d+)/);
-        router.addRouteInfo('/main', main, /main\/(\d+)/);
+        router.setDefaultRoute(main);
+
+        router.addRouteInfo('/menu', navBar, /menu\/(\d+)/);        
+        router.addRouteInfo('/dashBoard', dashBoard, /dashBoard\/(\d+)/)
+        router.addRouteInfo('/login', login, /login\/(\d+)/)
     }
 
     initialize = () => {

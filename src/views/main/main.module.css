@@ -1,6 +1,26 @@
 .main{
     width: 80%;
     height: 100%;
-    background-color: snow;
+    background-color: #312450;
     overflow-y: scroll;
+    color: white;
+}
+
+.main::-webkit-scrollbar{
+    /* ::-webkit-scrollbar : 스크롤바 전체 */
+    width: 8px;
+    background-color: seashell;
+}
+
+.main::-webkit-scrollbar-thumb{
+    /* ::-webkit-scrollbar-thumb : 스크롤 막대 */
+    background-color: wheat;
+    border-radius: 4px;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+}
+
+.main::-webkit-scrollbar-track{
+    /* ::-webkit-scrollbar-track : 스크롤 막대 외부 */
+    background-color: seashell;
 }

@@ -1,9 +1,30 @@
 .navBar{
     width: 20%;
     height: 100%;
-    background-color: seashell;
+    background-color: #1f2224;
     overflow-y: scroll;
+    color: white;
 }
+
+.navBar::-webkit-scrollbar{
+    /* ::-webkit-scrollbar : 스크롤바 전체 */
+    width: 8px;
+    background-color: #1f2224;
+}
+
+.navBar::-webkit-scrollbar-thumb{
+    /* ::-webkit-scrollbar-thumb : 스크롤 막대 */
+    background-color: #312450;
+    border-radius: 4px;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+}
+
+.navBar::-webkit-scrollbar-track{
+    /* ::-webkit-scrollbar-track : 스크롤 막대 외부 */
+    background-color: #1f2224;
+}
+
 
 .container{
     padding: 16px;
@@ -31,7 +52,7 @@
 }
 
 .list:hover{
-    background-color: wheat;
+    background-color: #5e42a6;
     cursor: pointer;
 }
 
@@ -40,5 +61,5 @@
 }
 
 .active {
-    background-color: wheat;
+    background-color: #5e42a6;
 }

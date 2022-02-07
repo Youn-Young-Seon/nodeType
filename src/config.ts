@@ -1,1 +1,1 @@
-export const STOCK_URL = '/api/stock';
+export const STOCK_URL = '/api/dashBoard';
